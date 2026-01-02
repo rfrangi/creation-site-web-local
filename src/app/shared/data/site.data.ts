@@ -37,11 +37,11 @@ export const SERVICES = [
   {
     id: 'simple',
     title: 'Site Vitrine Simple',
-    description: 'L\'essentiel pour démarrer votre présence en ligne.',
+    description: 'Un blog professionnel pour présenter votre activité.',
     features: [
       'Présentation claire de votre activité',
+      'Blog / Actualités',
       'Visible sur Google',
-      'Formulaire de contact',
       'Design responsive (mobile et ordinateur)',
       'Mise en ligne incluse'
     ],
@@ -52,14 +52,14 @@ export const SERVICES = [
   {
     id: 'complet',
     title: 'Site Vitrine Complet',
-    description: 'Une vitrine professionnelle qui vous démarque.',
+    description: 'Un blog amélioré avec galerie photos et gestion de contact.',
     features: [
-      'Design premium personnalisé',
-      'Référencement local optimisé',
+      'Tout le Site Vitrine Simple',
       'Galerie photos de vos réalisations',
-      'Animations modernes',
-      'Optimisation performance',
-      'Accompagnement sur mesure'
+      'Formulaire de contact avancé',
+      'Gestion des emails',
+      'Référencement local optimisé',
+      'Design premium personnalisé'
     ],
     price: 'Sur devis',
     popular: true,
@@ -68,12 +68,12 @@ export const SERVICES = [
   {
     id: 'avance',
     title: 'Site avec Fonctionnalités',
-    description: 'Des outils pour automatiser votre activité.',
+    description: 'Des outils avancés pour développer votre activité.',
     features: [
-      'Prise de rendez-vous en ligne',
-      'Demande de devis automatisée',
-      'Intégration réseaux sociaux',
-      'Blog ou actualités',
+      'Envoi d\'emails automatisés',
+      'Vente de produits en ligne',
+      'Gestion des paiements',
+      'Prise de rendez-vous',
       'Fonctionnalités sur mesure',
       'Formation à l\'utilisation'
     ],
