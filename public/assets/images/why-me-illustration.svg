@@ -1,0 +1,79 @@
+<svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="250" cy="200" r="160" fill="#fafafa"/>
+
+  <!-- Central person silhouette -->
+  <g transform="translate(175, 100)">
+    <!-- Head -->
+    <circle cx="75" cy="40" r="35" fill="#171717"/>
+
+    <!-- Body -->
+    <path d="M30 90 C 30 90 20 100 20 130 L 20 200 L 50 200 L 50 150 L 75 180 L 100 150 L 100 200 L 130 200 L 130 130 C 130 100 120 90 120 90 C 100 80 50 80 30 90 Z" fill="#171717"/>
+
+    <!-- Handshake effect lines -->
+    <g transform="translate(-30, 120)">
+      <line x1="0" y1="20" x2="20" y2="20" stroke="#d4d4d4" stroke-width="3" stroke-linecap="round"/>
+      <line x1="5" y1="35" x2="25" y2="35" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round"/>
+      <line x1="0" y1="50" x2="15" y2="50" stroke="#d4d4d4" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(140, 120)">
+      <line x1="0" y1="20" x2="20" y2="20" stroke="#d4d4d4" stroke-width="3" stroke-linecap="round"/>
+      <line x1="0" y1="35" x2="20" y2="35" stroke="#e5e5e5" stroke-width="2" stroke-linecap="round"/>
+      <line x1="5" y1="50" x2="20" y2="50" stroke="#d4d4d4" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Floating skill badges -->
+  <!-- Direct contact -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="80" height="80" rx="16" fill="white" filter="drop-shadow(0 8px 25px rgba(0,0,0,0.08))"/>
+    <g transform="translate(22, 20)">
+      <circle cx="18" cy="12" r="10" fill="none" stroke="#171717" stroke-width="2.5"/>
+      <path d="M3 38 C 3 28 10 22 18 22 C 26 22 33 28 33 38" fill="none" stroke="#171717" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <text x="40" y="68" font-family="Inter, sans-serif" font-size="8" fill="#525252" text-anchor="middle">Direct</text>
+  </g>
+
+  <!-- Listening -->
+  <g transform="translate(370, 80)">
+    <rect x="0" y="0" width="80" height="80" rx="16" fill="white" filter="drop-shadow(0 8px 25px rgba(0,0,0,0.08))"/>
+    <g transform="translate(22, 18)">
+      <path d="M5 18 C 5 8 12 2 20 2 C 28 2 35 8 35 18 L 35 25 C 35 28 32 30 30 30 L 28 30 L 28 18 C 28 12 24 8 20 8 C 16 8 12 12 12 18 L 12 30 L 10 30 C 8 30 5 28 5 25 L 5 18 Z" fill="none" stroke="#171717" stroke-width="2.5"/>
+      <path d="M15 32 L 15 38 C 15 42 18 44 20 44 C 22 44 25 42 25 38 L 25 32" fill="none" stroke="#171717" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <text x="40" y="68" font-family="Inter, sans-serif" font-size="8" fill="#525252" text-anchor="middle">Ecoute</text>
+  </g>
+
+  <!-- Local expertise -->
+  <g transform="translate(50, 250)">
+    <rect x="0" y="0" width="80" height="80" rx="16" fill="#0d9488" filter="drop-shadow(0 10px 30px rgba(13,148,136,0.25))"/>
+    <g transform="translate(22, 15)">
+      <path d="M18 0 C 8 0 0 8 0 18 C 0 32 18 45 18 45 C 18 45 36 32 36 18 C 36 8 28 0 18 0 Z" fill="none" stroke="white" stroke-width="2.5"/>
+      <circle cx="18" cy="18" r="7" fill="white"/>
+    </g>
+    <text x="40" y="70" font-family="Inter, sans-serif" font-size="8" fill="white" text-anchor="middle">Local</text>
+  </g>
+
+  <!-- Fair price -->
+  <g transform="translate(370, 250)">
+    <rect x="0" y="0" width="80" height="80" rx="16" fill="white" filter="drop-shadow(0 8px 25px rgba(0,0,0,0.08))"/>
+    <g transform="translate(28, 18)">
+      <circle cx="12" cy="20" r="18" fill="none" stroke="#171717" stroke-width="2.5"/>
+      <text x="12" y="26" font-family="Inter, sans-serif" font-size="18" fill="#171717" text-anchor="middle" font-weight="600">$</text>
+    </g>
+    <text x="40" y="70" font-family="Inter, sans-serif" font-size="8" fill="#525252" text-anchor="middle">Juste prix</text>
+  </g>
+
+  <!-- Connection lines -->
+  <line x1="130" y1="120" x2="175" y2="150" stroke="#99f6e4" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="370" y1="120" x2="325" y2="150" stroke="#99f6e4" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="130" y1="290" x2="175" y2="260" stroke="#99f6e4" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="370" y1="290" x2="325" y2="260" stroke="#99f6e4" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <!-- Decorative elements -->
+  <circle cx="250" cy="50" r="8" fill="#e5e5e5"/>
+  <circle cx="250" cy="370" r="6" fill="#d4d4d4"/>
+  <circle cx="460" cy="200" r="5" fill="#e5e5e5"/>
+  <circle cx="40" cy="180" r="4" fill="#d4d4d4"/>
+</svg>

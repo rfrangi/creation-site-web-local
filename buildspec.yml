@@ -1,0 +1,36 @@
+version: 0.2
+
+env:
+  variables:
+    CACHE_CONTROL: "86400"
+    BUILD_FOLDER: "dist/site/browser"
+    S3_BUCKET: "rfi-ma-vitrine"
+    CLOUDFRONT_DISTRIBUTION_ID: "EIQOJ10MO3ZAU"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 22
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm ci
+
+  build:
+    commands:
+      - echo Build started
+      - npm run build
+
+  post_build:
+    commands:
+      - echo Remove all files in S3
+      - aws s3 rm s3://$S3_BUCKET/browser/ --recursive
+      - echo Upload new files to S3
+      - aws s3 sync $BUILD_FOLDER s3://$S3_BUCKET/browser/ --delete
+      - echo Create CloudFront invalidation
+      - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'dist/site/browser'
+  discard-paths: no

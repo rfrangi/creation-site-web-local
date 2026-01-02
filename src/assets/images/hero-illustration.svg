@@ -1,0 +1,96 @@
+<svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background shapes -->
+  <circle cx="650" cy="150" r="120" fill="#f5f5f5"/>
+  <circle cx="180" cy="450" r="80" fill="#e5e5e5" opacity="0.5"/>
+
+  <!-- Main browser window -->
+  <g transform="translate(150, 80)">
+    <!-- Browser frame -->
+    <rect x="0" y="0" width="500" height="380" rx="20" fill="white" filter="drop-shadow(0 25px 50px rgba(0,0,0,0.1))"/>
+
+    <!-- Browser header -->
+    <rect x="0" y="0" width="500" height="50" rx="20" fill="#fafafa"/>
+    <rect x="0" y="30" width="500" height="20" fill="#fafafa"/>
+
+    <!-- Browser dots -->
+    <circle cx="25" cy="25" r="6" fill="#e5e5e5"/>
+    <circle cx="45" cy="25" r="6" fill="#e5e5e5"/>
+    <circle cx="65" cy="25" r="6" fill="#e5e5e5"/>
+
+    <!-- URL bar -->
+    <rect x="100" y="15" width="300" height="20" rx="10" fill="white"/>
+    <text x="130" y="29" font-family="Inter, sans-serif" font-size="10" fill="#a3a3a3">votre-site-web.fr</text>
+
+    <!-- Content area -->
+    <rect x="30" y="70" width="180" height="24" rx="4" fill="#171717"/>
+    <rect x="30" y="105" width="280" height="12" rx="2" fill="#e5e5e5"/>
+    <rect x="30" y="125" width="240" height="12" rx="2" fill="#e5e5e5"/>
+    <rect x="30" y="145" width="200" height="12" rx="2" fill="#e5e5e5"/>
+
+    <!-- CTA buttons -->
+    <rect x="30" y="180" width="120" height="40" rx="20" fill="#171717"/>
+    <rect x="160" y="180" width="120" height="40" rx="20" fill="white" stroke="#e5e5e5" stroke-width="1"/>
+
+    <!-- Image placeholder -->
+    <rect x="300" y="70" width="170" height="150" rx="12" fill="#f5f5f5"/>
+    <circle cx="385" cy="120" r="25" fill="#e5e5e5"/>
+    <path d="M340 180 L360 150 L390 175 L420 140 L440 180 Z" fill="#d4d4d4"/>
+
+    <!-- Cards row -->
+    <rect x="30" y="250" width="140" height="100" rx="12" fill="#fafafa"/>
+    <rect x="180" y="250" width="140" height="100" rx="12" fill="#fafafa"/>
+    <rect x="330" y="250" width="140" height="100" rx="12" fill="#fafafa"/>
+
+    <!-- Card content -->
+    <circle cx="60" cy="280" r="15" fill="#e5e5e5"/>
+    <rect x="45" y="305" width="80" height="8" rx="2" fill="#d4d4d4"/>
+    <rect x="45" y="320" width="100" height="6" rx="2" fill="#e5e5e5"/>
+
+    <circle cx="210" cy="280" r="15" fill="#e5e5e5"/>
+    <rect x="195" y="305" width="80" height="8" rx="2" fill="#d4d4d4"/>
+    <rect x="195" y="320" width="100" height="6" rx="2" fill="#e5e5e5"/>
+
+    <circle cx="360" cy="280" r="15" fill="#e5e5e5"/>
+    <rect x="345" y="305" width="80" height="8" rx="2" fill="#d4d4d4"/>
+    <rect x="345" y="320" width="100" height="6" rx="2" fill="#e5e5e5"/>
+  </g>
+
+  <!-- Floating elements -->
+  <!-- SEO badge -->
+  <g transform="translate(580, 100)">
+    <rect x="0" y="0" width="100" height="100" rx="20" fill="#0d9488" filter="drop-shadow(0 10px 30px rgba(13,148,136,0.3))"/>
+    <text x="50" y="45" font-family="Inter, sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="500">SEO</text>
+    <text x="50" y="65" font-family="Inter, sans-serif" font-size="24" fill="white" text-anchor="middle" font-weight="600">#1</text>
+  </g>
+
+  <!-- Responsive badge -->
+  <g transform="translate(100, 350)">
+    <rect x="0" y="0" width="90" height="90" rx="18" fill="white" filter="drop-shadow(0 10px 30px rgba(0,0,0,0.1))"/>
+    <g transform="translate(25, 22)">
+      <!-- Phone icon -->
+      <rect x="0" y="0" width="18" height="30" rx="3" fill="none" stroke="#171717" stroke-width="2"/>
+      <circle cx="9" cy="25" r="2" fill="#171717"/>
+      <!-- Desktop icon -->
+      <rect x="22" y="5" width="25" height="18" rx="2" fill="none" stroke="#171717" stroke-width="2"/>
+      <line x1="30" y1="23" x2="38" y2="28" stroke="#171717" stroke-width="2"/>
+      <line x1="38" y1="23" x2="30" y2="28" stroke="#171717" stroke-width="2"/>
+    </g>
+    <text x="45" y="75" font-family="Inter, sans-serif" font-size="9" fill="#525252" text-anchor="middle">Responsive</text>
+  </g>
+
+  <!-- Speed badge -->
+  <g transform="translate(620, 380)">
+    <rect x="0" y="0" width="85" height="85" rx="16" fill="#f0fdfa" filter="drop-shadow(0 8px 25px rgba(0,0,0,0.08))"/>
+    <g transform="translate(22, 18)">
+      <!-- Lightning bolt -->
+      <path d="M22 2 L8 24 L18 24 L14 42 L32 18 L20 18 Z" fill="#0d9488"/>
+    </g>
+    <text x="42" y="72" font-family="Inter, sans-serif" font-size="9" fill="#0f766e" text-anchor="middle">Rapide</text>
+  </g>
+
+  <!-- Decorative circles -->
+  <circle cx="720" cy="300" r="8" fill="#171717"/>
+  <circle cx="750" cy="280" r="5" fill="#d4d4d4"/>
+  <circle cx="80" cy="200" r="6" fill="#e5e5e5"/>
+  <circle cx="60" cy="230" r="4" fill="#d4d4d4"/>
+</svg>
