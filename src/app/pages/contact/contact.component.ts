@@ -67,18 +67,8 @@ interface ContactForm {
                 <!-- Form -->
                 <form
                   *ngIf="!formSubmitted()"
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
-                  netlify-honeypot="bot-field"
                   (ngSubmit)="onSubmit($event)"
                   class="space-y-6">
-
-                  <!-- Honeypot for spam -->
-                  <input type="hidden" name="form-name" value="contact">
-                  <p class="hidden">
-                    <label>Ne pas remplir : <input name="bot-field"></label>
-                  </p>
 
                   <!-- Name & Email -->
                   <div class="grid md:grid-cols-2 gap-6">
@@ -304,14 +294,18 @@ export class ContactComponent {
     event.preventDefault();
     this.isSubmitting.set(true);
 
-    // Simulate form submission (Netlify will handle the actual submission)
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
+    const formData = new FormData();
+    formData.append('name', this.form.name);
+    formData.append('email', this.form.email);
+    formData.append('phone', this.form.phone);
+    formData.append('activity', this.form.activity);
+    formData.append('message', this.form.message);
+    formData.append('budget', this.form.budget);
 
-    fetch('/', {
+    fetch('https://formspree.io/f/mqegyzyd', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData as any).toString()
+      headers: { 'Accept': 'application/json' },
+      body: formData
     })
     .then(() => {
       this.formSubmitted.set(true);

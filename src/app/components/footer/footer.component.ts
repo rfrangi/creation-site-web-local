@@ -78,9 +78,6 @@ import { SITE_DATA } from '../../shared/data/site.data';
               <p>
                 <a [href]="site.contact.phoneLink" class="hover:text-accent-400 transition-colors">{{ site.contact.phone }}</a>
               </p>
-              <p>
-                <a [href]="'mailto:' + site.contact.email" class="hover:text-accent-400 transition-colors">{{ site.contact.email }}</a>
-              </p>
               <p class="pt-2 text-primary-500">Disponible {{ site.contact.hours }}</p>
             </address>
           </div>
