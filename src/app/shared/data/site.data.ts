@@ -214,6 +214,13 @@ export const PORTFOLIO = [
     description: 'Marketplace pour commercants locaux',
     category: 'E-commerce',
     logo: 'assets/logo_tomatoo.png'
+  },
+  {
+    name: 'CBD24H',
+    url: 'https://www.cbd24h.fr',
+    description: 'Boutique en ligne de produits CBD',
+    category: 'E-commerce',
+    logo: 'assets/logo-cbd24h.png'
   }
 ];
 
