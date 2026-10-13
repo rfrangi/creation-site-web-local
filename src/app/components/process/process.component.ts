@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { PROCESS_STEPS } from '../../shared/data/site.data';
+import { PROCESS_STEPS, SITE_DATA } from '../../shared/data/site.data';
 
 @Component({
   selector: 'app-process',
@@ -13,11 +13,11 @@ import { PROCESS_STEPS } from '../../shared/data/site.data';
         <!-- Header with illustration -->
         <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div class="text-center lg:text-left">
-            <span class="badge badge-light mb-6">Méthode</span>
-            <h2 class="mb-6">Un processus simple</h2>
+            <span class="badge badge-light mb-6">Comment ça marche</span>
+            <h2 class="mb-6">Vous voyez avant de payer</h2>
             <p class="text-lg text-primary-500">
-              De notre premier échange à la mise en ligne,
-              chaque étape est claire et transparente.
+              J'étudie votre métier, je vous fais une proposition, puis je développe
+              un premier brouillon. Vous ne payez qu'à partir du moment où il vous plaît.
             </p>
           </div>
           <div class="hidden lg:block">
@@ -59,11 +59,29 @@ import { PROCESS_STEPS } from '../../shared/data/site.data';
           </div>
         </div>
 
+        <!-- Engagement paiement -->
+        <div class="max-w-4xl mx-auto mt-20">
+          <div class="bg-primary-900 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row md:items-center gap-6">
+            <div class="w-14 h-14 rounded-2xl bg-accent-600 flex items-center justify-center flex-shrink-0">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-white mb-2">{{ promise }}</h3>
+              <p class="text-primary-300 text-sm leading-relaxed">
+                L'étude de votre activité, le devis et le premier brouillon ne vous engagent à rien.
+                Si le résultat ne vous convainc pas, vous ne devez rien et nous en restons là.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <!-- CTA -->
-        <div class="text-center mt-20">
+        <div class="text-center mt-16">
           <p class="text-primary-500 mb-6 text-sm">Prêt à démarrer votre projet ?</p>
           <a routerLink="/contact" class="btn-primary group">
-            Planifier un échange gratuit
+            Demander mon étude gratuite
             <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
@@ -75,4 +93,5 @@ import { PROCESS_STEPS } from '../../shared/data/site.data';
 })
 export class ProcessComponent {
   steps = PROCESS_STEPS;
+  promise = SITE_DATA.promise;
 }

@@ -7,7 +7,7 @@ import { TESTIMONIALS } from '../../shared/data/site.data';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="temoignages" class="section bg-primary-50/30">
+    <section id="temoignages" class="section bg-primary-50/30" *ngIf="testimonials.length">
       <div class="container-custom">
         <!-- Header -->
         <div class="text-center max-w-2xl mx-auto mb-20">

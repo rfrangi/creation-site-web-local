@@ -13,10 +13,10 @@ import { SERVICES } from '../../shared/data/site.data';
         <!-- Header -->
         <div class="text-center max-w-2xl mx-auto mb-20">
           <span class="badge badge-light mb-6">Services</span>
-          <h2 class="mb-6">Des offres adaptees a vos besoins</h2>
+          <h2 class="mb-6">Des offres adaptées à vos besoins</h2>
           <p class="text-lg text-primary-500">
-            Pas de solution generique. Chaque site est concu selon vos objectifs
-            et les attentes de vos clients.
+            Les prix de départ sont affichés, sans mauvaise surprise. Chaque site est
+            conçu selon vos objectifs et les attentes de vos clients.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ import { SERVICES } from '../../shared/data/site.data';
               *ngIf="service.popular"
               class="absolute -top-3 left-6">
               <span class="bg-accent-500 text-white px-4 py-1.5 rounded-full text-xs font-medium tracking-wide">
-                Recommande
+                Le plus demandé
               </span>
             </div>
 
@@ -82,10 +82,15 @@ import { SERVICES } from '../../shared/data/site.data';
 
             <!-- Price & CTA -->
             <div class="mt-auto">
-              <p class="text-2xl font-semibold mb-6"
+              <p class="text-2xl font-semibold mb-1"
                  [class.text-white]="service.popular"
                  [class.text-primary-900]="!service.popular">
                 {{ service.price }}
+              </p>
+              <p class="text-xs mb-6"
+                 [class.text-accent-300]="service.popular"
+                 [class.text-accent-700]="!service.popular">
+                {{ service.priceNote }}
               </p>
               <a routerLink="/contact"
                  class="block w-full text-center py-3.5 px-6 rounded-full text-sm font-medium transition-all duration-300"
@@ -102,8 +107,9 @@ import { SERVICES } from '../../shared/data/site.data';
         </div>
 
         <!-- Bottom note -->
-        <p class="text-center text-primary-400 mt-16 text-sm">
-          Chaque projet est unique. Les tarifs sont indicatifs et ajustes selon vos besoins specifiques.
+        <p class="text-center text-primary-500 mt-16 text-sm">
+          Chaque projet est unique : le devis détaillé est établi après l'étude de votre activité,
+          et vous ne payez qu'une fois le premier brouillon validé.
         </p>
       </div>
     </section>

@@ -22,18 +22,19 @@ import { SITE_DATA } from '../../shared/data/site.data';
           <div class="text-center lg:text-left">
             <div class="animate-init animate-fade-in-up">
               <span class="badge badge-light mb-8">
-                Artisans · Commerçants · Professions libérales
+                Sites vitrines · Boutiques en ligne · Applications métier
               </span>
             </div>
 
             <h1 class="animate-init animate-fade-in-up delay-100 mb-8">
-              Votre présence en ligne,<br>
-              <span class="text-gradient">qui vous ressemble</span>
+              Création de sites web<br>
+              <span class="text-gradient">pour les pros du Nord</span>
             </h1>
 
             <p class="text-lg md:text-xl text-primary-500 mb-10 max-w-lg mx-auto lg:mx-0 animate-init animate-fade-in-up delay-200">
-              Sites web sur mesure pour professionnels du Nord.
-              Design épuré, référencement Google, résultats concrets.
+              Site vitrine dès 100 €, e-commerce dès 3 000 €.
+              J'étudie votre activité, je développe un premier brouillon,
+              et vous ne payez qu'une fois qu'il vous plaît.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-init animate-fade-in-up delay-300">
@@ -55,15 +56,15 @@ import { SITE_DATA } from '../../shared/data/site.data';
             <div class="mt-14 flex flex-wrap gap-8 justify-center lg:justify-start animate-init animate-fade-in-up delay-400">
               <div class="flex items-center text-primary-500">
                 <div class="w-1.5 h-1.5 rounded-full bg-accent-500 mr-3"></div>
-                <span class="text-sm">Échange gratuit</span>
+                <span class="text-sm">Étude gratuite de votre activité</span>
               </div>
               <div class="flex items-center text-primary-500">
                 <div class="w-1.5 h-1.5 rounded-full bg-accent-500 mr-3"></div>
-                <span class="text-sm">Sans engagement</span>
+                <span class="text-sm">Vitrine dès 100 €</span>
               </div>
               <div class="flex items-center text-primary-500">
                 <div class="w-1.5 h-1.5 rounded-full bg-accent-500 mr-3"></div>
-                <span class="text-sm">Dès 200€</span>
+                <span class="text-sm">Vous payez après validation</span>
               </div>
             </div>
           </div>

@@ -16,10 +16,16 @@ import { SITE_DATA } from '../../shared/data/site.data';
           <div class="lg:col-span-2">
             <div class="flex items-start gap-5 mb-6">
               <img src="assets/images/profil.PNG"
-                   alt="Romain - Créateur de sites web"
+                   alt="Romain Frangi, fondateur de Bon Déclic"
+                   width="64"
+                   height="64"
                    class="w-16 h-16 rounded-full object-cover object-top border-2 border-accent-500 flex-shrink-0">
               <div>
-                <h3 class="text-xl font-semibold text-white mb-1">{{ site.name }}</h3>
+                <h3 class="text-xl font-semibold text-white mb-1 flex items-center gap-2">
+                  <!-- Icone seule : le logo complet a un texte noir, illisible ici -->
+                  <img [src]="site.icon" alt="" width="24" height="24" class="w-6 h-6" aria-hidden="true">
+                  {{ site.name }}
+                </h3>
                 <p class="text-accent-400 text-sm italic">
                   "Votre succès en ligne, c'est ma priorité."
                 </p>
@@ -43,23 +49,23 @@ import { SITE_DATA } from '../../shared/data/site.data';
             <h4 class="text-sm font-semibold text-white mb-5 tracking-wide uppercase">Navigation</h4>
             <ul class="space-y-3">
               <li>
-                <a href="#services" class="text-primary-400 hover:text-accent-400 transition-colors text-sm">
+                <a routerLink="/" fragment="services" class="text-primary-400 hover:text-accent-400 transition-colors text-sm">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#pour-qui" class="text-primary-400 hover:text-accent-400 transition-colors text-sm">
+                <a routerLink="/" fragment="pour-qui" class="text-primary-400 hover:text-accent-400 transition-colors text-sm">
                   Pour qui
                 </a>
               </li>
               <li>
-                <a href="#methode" class="text-primary-400 hover:text-accent-400 transition-colors text-sm">
-                  Méthode
+                <a routerLink="/" fragment="methode" class="text-primary-400 hover:text-accent-400 transition-colors text-sm">
+                  Comment ça marche
                 </a>
               </li>
               <li>
-                <a href="#temoignages" class="text-primary-400 hover:text-accent-400 transition-colors text-sm">
-                  Témoignages
+                <a routerLink="/" fragment="faq" class="text-primary-400 hover:text-accent-400 transition-colors text-sm">
+                  Questions fréquentes
                 </a>
               </li>
               <li>

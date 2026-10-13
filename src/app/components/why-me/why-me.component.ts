@@ -13,9 +13,10 @@ import { WHY_ME_POINTS } from '../../shared/data/site.data';
         <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
           <div class="text-center lg:text-left">
             <span class="badge badge-light mb-6">Pourquoi moi</span>
-            <h2 class="mb-6">Un interlocuteur unique</h2>
+            <h2 class="mb-6">Pourquoi me confier votre site</h2>
             <p class="text-lg text-primary-500 max-w-md mx-auto lg:mx-0">
-              Pas d'agence impersonnelle. Vous échangez directement avec moi,
+              Le sérieux d'une agence, avec un seul interlocuteur :
+              celui qui étudie votre métier est celui qui code votre site,
               de la première discussion à la mise en ligne.
             </p>
           </div>
@@ -26,7 +27,7 @@ import { WHY_ME_POINTS } from '../../shared/data/site.data';
               <div class="absolute -bottom-4 -right-4 w-full h-full bg-primary-200/30 rounded-3xl"></div>
               <!-- Photo -->
               <img src="assets/images/profil.PNG"
-                   alt="Romain - Créateur de sites web"
+                   alt="Romain Frangi, fondateur de Bon Déclic"
                    class="relative w-72 h-80 object-cover object-top rounded-3xl shadow-soft-lg border-4 border-white"
                    loading="lazy">
               <!-- Floating badge -->
@@ -70,20 +71,20 @@ import { WHY_ME_POINTS } from '../../shared/data/site.data';
         <div class="mt-20 bg-gradient-to-r from-primary-900 via-accent-900 to-primary-900 rounded-3xl p-10">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <p class="text-4xl font-light text-accent-300 mb-2">100%</p>
-              <p class="text-primary-300 text-sm">Clients satisfaits</p>
+              <p class="text-4xl font-light text-accent-300 mb-2">0 €</p>
+              <p class="text-primary-300 text-sm">Avant validation du brouillon</p>
             </div>
             <div>
               <p class="text-4xl font-light text-white mb-2">48h</p>
-              <p class="text-primary-300 text-sm">Première maquette</p>
+              <p class="text-primary-300 text-sm">Pour recevoir votre devis</p>
             </div>
             <div>
-              <p class="text-4xl font-light text-accent-300 mb-2">200+</p>
-              <p class="text-primary-300 text-sm">Projets réalisés</p>
+              <p class="text-4xl font-light text-accent-300 mb-2">100 €</p>
+              <p class="text-primary-300 text-sm">Site vitrine, prix de départ</p>
             </div>
             <div>
-              <p class="text-4xl font-light text-white mb-2">5/5</p>
-              <p class="text-primary-300 text-sm">Note moyenne</p>
+              <p class="text-4xl font-light text-white mb-2">7j/7</p>
+              <p class="text-primary-300 text-sm">Joignable de 7h à 19h</p>
             </div>
           </div>
         </div>

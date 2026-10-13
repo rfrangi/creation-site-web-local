@@ -1,5 +1,5 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, PLATFORM_ID, Inject } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, AfterViewInit, OnDestroy, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { ServicesComponent } from '../../components/services/services.component';
 import { TargetAudienceComponent } from '../../components/target-audience/target-audience.component';
@@ -7,6 +7,7 @@ import { WhyMeComponent } from '../../components/why-me/why-me.component';
 import { ProcessComponent } from '../../components/process/process.component';
 import { TestimonialsComponent } from '../../components/testimonials/testimonials.component';
 import { PortfolioComponent } from '../../components/portfolio/portfolio.component';
+import { FaqComponent } from '../../components/faq/faq.component';
 import { CtaSectionComponent } from '../../components/cta-section/cta-section.component';
 import { ScrollAnimationService } from '../../shared/services/scroll-animation.service';
 
@@ -14,7 +15,6 @@ import { ScrollAnimationService } from '../../shared/services/scroll-animation.s
   selector: 'app-home',
   standalone: true,
   imports: [
-    CommonModule,
     HeroComponent,
     ServicesComponent,
     TargetAudienceComponent,
@@ -22,6 +22,7 @@ import { ScrollAnimationService } from '../../shared/services/scroll-animation.s
     ProcessComponent,
     TestimonialsComponent,
     PortfolioComponent,
+    FaqComponent,
     CtaSectionComponent
   ],
   template: `
@@ -44,6 +45,9 @@ import { ScrollAnimationService } from '../../shared/services/scroll-animation.s
       </div>
       <div class="reveal">
         <app-testimonials />
+      </div>
+      <div class="reveal">
+        <app-faq />
       </div>
       <div class="reveal">
         <app-cta-section />

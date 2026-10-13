@@ -11,7 +11,12 @@ interface ContactForm {
   activity: string;
   message: string;
   budget: string;
+  /** Piege a robots : doit rester vide, Formspree jette la soumission sinon. */
+  gotcha: string;
 }
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqegyzyd';
+const DELAI_MAX_MS = 15000;
 
 @Component({
   selector: 'app-contact',
@@ -64,11 +69,50 @@ interface ContactForm {
                   </p>
                 </div>
 
+                <!-- Echec d'envoi : jamais silencieux, avec un repli joignable -->
+                <div *ngIf="erreur()"
+                     role="alert"
+                     class="mb-8 rounded-2xl border border-red-200 bg-red-50 p-6">
+                  <div class="flex items-start gap-4">
+                    <svg class="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01M5.07 19h13.86c1.54 0 2.5-1.67 1.73-3L13.73 4a2 2 0 00-3.46 0L3.34 16c-.77 1.33.19 3 1.73 3z"/>
+                    </svg>
+                    <div class="flex-1">
+                      <h3 class="font-semibold text-red-900 mb-2">Votre message n'a pas été envoyé</h3>
+                      <p class="text-red-800 text-sm mb-3">{{ erreur() }}</p>
+                      <p class="text-red-800 text-sm mb-5">
+                        Vos réponses sont conservées ci-dessous, vous pouvez réessayer.
+                        Si ça bloque encore, joignez-moi directement : je réponds tout de suite.
+                      </p>
+                      <div class="flex flex-col sm:flex-row gap-3">
+                        <a [href]="site.contact.phoneLink"
+                           class="inline-flex items-center justify-center px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-full text-sm font-medium transition-colors">
+                          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                          </svg>
+                          Appeler le {{ site.contact.phone }}
+                        </a>
+                        <a [href]="lienEmailSecours()"
+                           class="inline-flex items-center justify-center px-5 py-2.5 border border-red-300 text-red-800 hover:bg-red-100 rounded-full text-sm font-medium transition-colors">
+                          Envoyer par email
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <!-- Form -->
                 <form
                   *ngIf="!formSubmitted()"
                   (ngSubmit)="onSubmit($event)"
                   class="space-y-6">
+
+                  <!-- Piege a robots : invisible pour un humain et pour un lecteur d'ecran -->
+                  <div class="hidden" aria-hidden="true">
+                    <label for="gotcha">Laissez ce champ vide</label>
+                    <input type="text" id="gotcha" name="_gotcha"
+                           [(ngModel)]="form.gotcha" tabindex="-1" autocomplete="off">
+                  </div>
 
                   <!-- Name & Email -->
                   <div class="grid md:grid-cols-2 gap-6">
@@ -284,38 +328,91 @@ export class ContactComponent {
     phone: '',
     activity: '',
     message: '',
-    budget: ''
+    budget: '',
+    gotcha: ''
   };
 
   isSubmitting = signal(false);
   formSubmitted = signal(false);
+  erreur = signal<string | null>(null);
 
-  onSubmit(event: Event) {
+  /** Repli mailto pre-rempli, propose quand l'envoi echoue. */
+  lienEmailSecours(): string {
+    const sujet = encodeURIComponent('Demande de devis - ' + (this.form.name || 'site internet'));
+    const corps = encodeURIComponent(
+      [this.form.message, '', 'Téléphone : ' + this.form.phone, 'Activité : ' + this.form.activity].join('\n')
+    );
+    return `mailto:${this.site.contact.email}?subject=${sujet}&body=${corps}`;
+  }
+
+  async onSubmit(event: Event) {
     event.preventDefault();
+    if (this.isSubmitting()) {
+      return;
+    }
+
     this.isSubmitting.set(true);
+    this.erreur.set(null);
 
-    const formData = new FormData();
-    formData.append('name', this.form.name);
-    formData.append('email', this.form.email);
-    formData.append('phone', this.form.phone);
-    formData.append('activity', this.form.activity);
-    formData.append('message', this.form.message);
-    formData.append('budget', this.form.budget);
+    const donnees = new FormData();
+    donnees.append('name', this.form.name);
+    donnees.append('email', this.form.email);
+    donnees.append('phone', this.form.phone);
+    donnees.append('activity', this.form.activity);
+    donnees.append('message', this.form.message);
+    donnees.append('budget', this.form.budget);
+    donnees.append('_gotcha', this.form.gotcha);
+    donnees.append('_subject', `Nouvelle demande de devis — ${this.form.name}`);
 
-    fetch('https://formspree.io/f/mqegyzyd', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: formData
-    })
-    .then(() => {
+    try {
+      const reponse = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: donnees,
+        signal: AbortSignal.timeout(DELAI_MAX_MS)
+      });
+
+      // fetch ne rejette pas sur un statut HTTP d'erreur : sans ce test, un
+      // quota depasse (402) ou un refus (422) passerait pour un succes.
+      if (!reponse.ok) {
+        throw new Error(await this.messageDErreur(reponse));
+      }
+
       this.formSubmitted.set(true);
+    } catch (erreur) {
+      // Aucun repli silencieux : un echec doit se voir, sinon le prospect
+      // croit vous avoir ecrit et la demande est perdue des deux cotes.
+      this.erreur.set(this.texteLisible(erreur));
+    } finally {
       this.isSubmitting.set(false);
-    })
-    .catch((error) => {
-      console.error('Form submission error:', error);
-      this.isSubmitting.set(false);
-      // Fallback: show success anyway for better UX
-      this.formSubmitted.set(true);
-    });
+    }
+  }
+
+  /** Remonte le message d'erreur renvoye par Formspree quand il y en a un. */
+  private async messageDErreur(reponse: Response): Promise<string> {
+    try {
+      const corps = await reponse.json();
+      const message = corps?.errors?.[0]?.message;
+      if (typeof message === 'string' && message.trim()) {
+        return message;
+      }
+    } catch {
+      // corps vide ou non JSON : on retombe sur le statut
+    }
+    return `Le service d'envoi a répondu une erreur (code ${reponse.status}).`;
+  }
+
+  /** Traduit une exception technique en phrase comprehensible. */
+  private texteLisible(erreur: unknown): string {
+    if (erreur instanceof DOMException && erreur.name === 'TimeoutError') {
+      return 'Le serveur met trop de temps à répondre.';
+    }
+    if (erreur instanceof TypeError) {
+      return 'La connexion au service d\'envoi a échoué. Vérifiez votre connexion internet.';
+    }
+    if (erreur instanceof Error && erreur.message.trim()) {
+      return erreur.message;
+    }
+    return 'Une erreur inattendue est survenue.';
   }
 }

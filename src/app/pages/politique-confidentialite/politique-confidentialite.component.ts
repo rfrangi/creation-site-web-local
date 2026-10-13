@@ -70,8 +70,23 @@ import { SITE_DATA } from '../../shared/data/site.data';
                 Elles ne sont ni vendues, ni louées, ni cédées à des tiers.
               </p>
               <p>
-                Les données du formulaire sont transmises via Netlify Forms, notre prestataire
-                d'hébergement, qui agit en tant que sous-traitant.
+                Deux sous-traitants interviennent dans le traitement :
+              </p>
+              <ul>
+                <li>
+                  <strong>Formspree, Inc.</strong> (États-Unis) : achemine les demandes envoyées
+                  depuis le formulaire de contact vers notre boîte email.
+                </li>
+                <li>
+                  <strong>Amazon Web Services EMEA SARL</strong> (Luxembourg) : héberge le site
+                  (stockage Amazon S3 et diffusion Amazon CloudFront).
+                </li>
+              </ul>
+              <p>
+                L'acheminement du formulaire par Formspree implique un transfert de vos données
+                vers les États-Unis. Ce transfert est encadré par les clauses contractuelles
+                types de la Commission européenne. Si vous préférez l'éviter, vous pouvez nous
+                contacter directement par téléphone au {{ site.contact.phone }}.
               </p>
 
               <h2>6. Durée de conservation</h2>
@@ -108,7 +123,7 @@ import { SITE_DATA } from '../../shared/data/site.data';
               </p>
               <ul>
                 <li>Connexion sécurisée HTTPS</li>
-                <li>Hébergement sécurisé chez Netlify</li>
+                <li>Hébergement sécurisé chez Amazon Web Services (Union européenne)</li>
                 <li>Accès limité aux données personnelles</li>
               </ul>
 

@@ -16,8 +16,8 @@ import { TARGET_AUDIENCES } from '../../shared/data/site.data';
             <span class="badge badge-light mb-6">Pour qui</span>
             <h2 class="mb-6">Des professionnels comme vous</h2>
             <p class="text-lg text-primary-500 max-w-md mx-auto lg:mx-0">
-              Vous exercez un métier de proximité et cherchez plus de visibilité ?
-              Je vous accompagne dans votre présence en ligne.
+              Commerçants, artisans, salons de coiffure, métiers du bâtiment :
+              je crée des sites pour les professionnels qui vivent de leur clientèle locale.
             </p>
           </div>
           <div class="hidden lg:flex justify-center">
@@ -51,6 +51,7 @@ import { TARGET_AUDIENCES } from '../../shared/data/site.data';
                     <path *ngSwitchCase="'hard-hat'" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                     <path *ngSwitchCase="'flower'" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                     <path *ngSwitchCase="'utensils'" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    <path *ngSwitchCase="'scissors'" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.121 14.121L19 19m-7-7l6.878-6.878M12 12L5.121 5.121M12 12l-6.879 6.879M8 7a2 2 0 11-4 0 2 2 0 014 0zm0 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                     <path *ngSwitchCase="'store'" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
                     <path *ngSwitchCase="'briefcase'" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     <path *ngSwitchCase="'rocket'" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
