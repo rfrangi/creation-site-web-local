@@ -298,7 +298,7 @@ export const FAQ = [
   },
   {
     question: 'Mon site sera-t-il visible sur Google ?',
-    answer: 'Oui. Tous mes sites sont optimisés pour le référencement naturel (SEO). Je travaille particulièrement le référencement local pour que vous apparaissiez dans les recherches de votre ville et de votre zone d\'intervention.'
+    answer: 'Oui. Tous mes sites sont optimisés pour le référencement naturel (SEO). Je travaille particulièrement le référencement local pour maximiser vos chances de figurer dans les recherches de votre ville et de votre zone d\'intervention.'
   },
   {
     question: 'Puis-je modifier mon site moi-même ?',

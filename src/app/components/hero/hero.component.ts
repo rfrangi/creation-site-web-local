@@ -21,8 +21,8 @@ import { SITE_DATA } from '../../shared/data/site.data';
           <!-- Content -->
           <div class="text-center lg:text-left">
             <div class="animate-init animate-fade-in-up">
-              <span class="badge badge-light mb-8">
-                Sites vitrines · Boutiques en ligne · Applications métier
+              <span class="badge badge-accent mb-8">
+                Vous voyez votre site avant de payer
               </span>
             </div>
 
@@ -32,9 +32,9 @@ import { SITE_DATA } from '../../shared/data/site.data';
             </h1>
 
             <p class="text-lg md:text-xl text-primary-500 mb-10 max-w-lg mx-auto lg:mx-0 animate-init animate-fade-in-up delay-200">
-              Site vitrine dès 100 €, e-commerce dès 3 000 €.
-              J'étudie votre activité, je développe un premier brouillon,
-              et vous ne payez qu'une fois qu'il vous plaît.
+              J'étudie votre activité, puis je développe un premier brouillon
+              de votre site, réellement consultable en ligne. Vous le regardez
+              tranquillement. S'il ne vous plaît pas, vous ne payez rien.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-init animate-fade-in-up delay-300">
@@ -56,15 +56,15 @@ import { SITE_DATA } from '../../shared/data/site.data';
             <div class="mt-14 flex flex-wrap gap-8 justify-center lg:justify-start animate-init animate-fade-in-up delay-400">
               <div class="flex items-center text-primary-500">
                 <div class="w-1.5 h-1.5 rounded-full bg-accent-500 mr-3"></div>
-                <span class="text-sm">Étude gratuite de votre activité</span>
+                <span class="text-sm">Étude de votre activité offerte</span>
               </div>
               <div class="flex items-center text-primary-500">
                 <div class="w-1.5 h-1.5 rounded-full bg-accent-500 mr-3"></div>
-                <span class="text-sm">Vitrine dès 100 €</span>
+                <span class="text-sm">Du site vitrine à la boutique en ligne</span>
               </div>
               <div class="flex items-center text-primary-500">
                 <div class="w-1.5 h-1.5 rounded-full bg-accent-500 mr-3"></div>
-                <span class="text-sm">Vous payez après validation</span>
+                <span class="text-sm">Vous ne payez qu'après validation</span>
               </div>
             </div>
           </div>
